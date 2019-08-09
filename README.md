@@ -1,7 +1,7 @@
 # Individual Project of 256
 
 Online Recommendation system powered by CB, KB and hybrid models.
-## Implemented by Hongfei Xu
+Implemented by Hongfei Xu
 
 # Dependencies
 * Python 3.7
