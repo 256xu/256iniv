@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<style>
+body { background-image: url("{{ url_for('static', filename='b1.png')}}"), url("{{ url_for('static', filename='b2.png')}}");
+ background-repeat:repeat,repeat;
+ background-size: cover;
+ background-color: #cccccc;}
+h1 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 56px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; text-align: center;}
+
+
+a { color: #ffffff; font-family: 'Raleway',sans-serif;font-size: 12px;}
+
+
+a:hover { color: #1c1c1c; }
+
+.af { color: #1c1c1c; font-family: 'Raleway',sans-serif;font-size: 12px;}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button2 {
+  background-color: #FF9966; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+
+</style>
+
+
+<head>
+
+<title>Coursera Online Course Recommendation</title>
+</head>
+<body>
+<br />
+<br />
+<br />
+<br />
+<h1>Course Recommendation System</h1>
+
+<center><img src="{{ url_for('static', filename='coursera-logo.png')}}" alt="cousera logo" style="width:100px;height:80px;" ></center>
+<p>This is a simple system to recommend courses from Coursera for you.<br> Try customized recommendation now by entering your preferences!</p>
+<p></p>
+<br />
+<br />
+
+<form method="post">
+<center>
+<select name="topic", select style="width:220px;height:40px;">
+<option value="">Select Filed of Interests</option>
+<option value="Math and Computer Science">Math and Computer Science</option>
+<option value="Nature Science">Nature Science</option>
+<option value="Business">Business</option>
+<option value="Engineering">Engineering</option>
+<option value="Health">Health</option>
+<option value="Language, Arts and Social">Language, Arts and Social</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<select name="overall", select style="width:220px;height:40px;">
+<option value="">User ratings are higher than...</option>
+<option value="1">&#11088</option>
+<option value="2">&#11088 &#11088</option>
+<option value="3">&#11088 &#11088 &#11088</option>
+<option value="4">&#11088 &#11088 &#11088 &#11088</option>
+<option value="4.5">&#11088 &#11088 &#11088 &#11088 &#11088</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<select name="enrolled", select style="width:220px;height:40px;">
+<option value="">Enrolled students are more than...</option>
+<option value="2000">2000+</option>
+<option value="5000">5000+</option>
+<option value="10000">10000+</option>
+<option value="20000">20000+</option>
+<option value="50000">50000+</option>
+</select>
+<br />
+<br />
+<br />
+<br />
+
+<input type="text" input style="width:180px;height:30px;"  name="sentence" placeholder="Course Keywords"> &nbsp;&nbsp;
+<input type="text" input style="width:180px;height:30px;"  name="provider" placeholder="Provier Name, eg. Duke University"> &nbsp;&nbsp;
+<input type="text" input style="width:180px;height:30px;"  name="skills" placeholder="Skills you want to gain, eg. writing"> &nbsp;&nbsp;
+<input type="text" input style="width:180px;height:30px;"  name="subtitles" placeholder="Subtitles, eg. English, Chinese..."> &nbsp;&nbsp;
+<br />
+<br />
+<br />
+<br />
+
+
+
+<button type="submit" class="button" formaction="/search">Get Constraint-Based List>></button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" class="button2" formaction="/search2">Get Hybrid Recommendation>></button>
+
+
+</form>
+<br />
+<br />
+<br />
+<br />
+<a><span style="display:block; width:900px; word-wrap:break-word;">Instruction: If you choose constraint-based, system will recommend you with precision results for your keywords and other requirements; if you choose hybrid recommendation, system will calculate similarity from your keywords and get a hybrid result. You can try them to compare!</span></a>
+
+</center>
+<br />
+<br />
+<br />
+<br />
+<p></p>
+
+<center><p class="af">------------------------------ Built by Hongfei Xu ------------------------------<br>as an individual project of 256</p></center>>
+
+</body>
+</html>

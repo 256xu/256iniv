@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<style>
+body { background-image: url("{{ url_for('static', filename='b3.png')}}");
+ background-repeat:repeat;
+ background-size: 100%;
+ background-color: #cccccc;}
+.h8 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 56px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+.p5 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+h2 { color: #ffffff; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+
+
+p { color: #454545; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+
+
+a { color: #c8c8c8; text-decoration: underline; }
+
+
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
+.line-limit-length {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3; /* number of lines to show */
+ 
+}
+
+.button_back {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
+
+</style>
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+  <!-- CSS ============================================= -->
+  <link rel="stylesheet" href= "{{ url_for('static',filename='css/linearicons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/magnific-popup.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/nice-select.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/animate.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/owl.carousel.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/custom.css') }}">
+
+
+  <title>Coursera Online Course Recommendation</title>
+</head>
+<body>
+<br />
+<br />
+<br />
+<br />
+<p class="h8">Course Recommendation System</p>
+
+<center><img src="{{ url_for('static', filename='coursera-logo.png')}}" alt="cousera logo" style="width:100px;height:80px;" >
+<p class="p5">This is a simple system to recommend courses from Coursera for you.<br></p>
+<p></p>
+<br />
+<br />
+<button type="submit"  style="background-color: #ffffcc; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;"><a href="/"> Start a New Recommendation</button>
+</center>
+
+<form action="/search" method="post">
+<center>
+  <section class="post-area section-gap ">
+    <div class="container">
+      <div class="row justify-content-center d-flex">
+        <div class="col-lg-11 post-list">
+        {% if page_headline %}
+        <h4 class="text-white bg-dark">{{ page_headline }}</h4>
+        {% endif %}
+
+          {% if items %}
+            {% for item in items %}
+              {% if item %}
+              <div class="single-post d-flex flex-row">
+                <div class="details">
+                  <div class="title d-flex flex-row justify-content-between">
+                    <div class="titles">
+                      <a href="{{ item[7] }}"
+                         class="single-post-link">
+                        <h4 id="{{ item[0] }}">{{ item[0] }}</h4>
+                      </a>
+                      
+                    </div>
+                  </div>
+                  <p class="" align="left"><span class="lnr lnr-database"></span> Provider: {{ item[1] }}</p>
+                  <p class="" align="left"><span class="lnr lnr-database"></span> Enrolled Number: {{ item[3] }}&nbsp;&nbsp; Overall Ratings: {{ item[2] }}</p>
+                  <p class="line-limit-length" align="left"><span class="lnr lnr-database"></span> About: Recent Views - {{ item[4] }}</p>
+                  <p class="" align="left"><span class="lnr lnr-database"></span> Subtitles: {{ item[5] }}</p>
+                  
+
+                  <ul class="btns inline list-inline">
+                  <li><a href="/similar?index={{ item[9] }}">Get More Similar Courses</a></li>
+                  
+                  </ul>
+
+                </div>
+              </div>
+              {% else %}
+                <p>0 results found.</p>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <p class="info">0 results found.</p>
+          {% endif %}
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row d-flex align-items-center justify-content-center">
+  <form action="/more" method="post" id="get-more-items">
+    <br>
+    
+  </form>
+  </div>
+
+<br />
+<br />
+<br />
+<br />
+
+ &nbsp;&nbsp;
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+</center>
+</form>
+
+<p></p>
+
+</body>
+</html>
