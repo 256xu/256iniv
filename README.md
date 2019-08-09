@@ -11,4 +11,4 @@ Commands to run app:
 1. install packages
 `pip3 install -r requirements.txt`
 2. start the app 
-`python manage.py runserver`
+`python3 app.py`
