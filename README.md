@@ -3,7 +3,7 @@
 Online Recommendation system powered by CB, KB and hybrid models.
 Implemented by Hongfei Xu.
 
-You can try it [online](https://xu256indiv.herokuapp.com/)
+You can try it [online!](https://xu256indiv.herokuapp.com/)
 
 # Install and Run App
 * Python 3.7
