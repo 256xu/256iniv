@@ -1,9 +1,9 @@
-# Individual Project of 256
+# Individual Project - Online Course Recommendation system
 
 Online Recommendation system powered by CB, KB and hybrid models.
 Implemented by Hongfei Xu.
 
-You can try it [online! (It may take a few minutes if you use it for the first time.)](https://xu256indiv.herokuapp.com/)
+
 
 # Install and Run App
 * Python 3.7
